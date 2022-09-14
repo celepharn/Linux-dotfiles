@@ -1,0 +1,24 @@
+/* Confirm Dialog */
+
+@import "colors.rasi"
+
+* {
+    background-color:       @al;
+    text-color:             @fga;
+	font:				 	"Noto Sans Font 10";
+}
+
+window {
+    width:      			210px;
+    padding:    			25px;
+    border:					1px 1px 1px 1px;
+    border-radius:          0px;
+    border-color:           @ac;
+    location:               center;
+    y-offset:               0em;
+}
+
+entry {
+    expand: 				true;
+    text-color:				@fga;
+}
