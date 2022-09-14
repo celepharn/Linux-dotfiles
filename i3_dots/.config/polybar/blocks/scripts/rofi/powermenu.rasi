@@ -1,0 +1,159 @@
+/* Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com> */
+/* Everyone is permitted to copy and distribute copies of this file under GNU-GPL3 */
+
+configuration {
+    font:                           "Noto Sans 10";
+    show-icons:                     false;
+    display-drun: 					"";
+    drun-display-format:            "{icon} {name}";
+    disable-history:                false;
+	click-to-exit: 					true;
+}
+
+@import "colors.rasi"
+
+window {
+    transparency:                   "real";
+    background-color:               @bg;
+    text-color:                     @fg;
+    border:                  		1px;
+    border-color:                  	@selected;
+    border-radius:                  0px;
+    width:                          404px;
+    location:                       center;
+    anchor:                         center;
+    x-offset:                       0;
+    y-offset:                       0;
+}
+
+prompt {
+    enabled: 						true;
+	margin: 						0px 0px 0px 8px;
+    padding:    					6px 0px 6px 0px;
+	background-color: 				@al;
+	text-color: 					@fg;
+    border:                  		0px 0px 0px 0px;
+    border-color:                  	@fg;
+    border-radius:                  0px;
+}
+
+textbox-prompt-colon {
+	expand: 						false;
+	str: 							"";
+    border-radius:                  0px;
+    background-color:               @al;
+    text-color:                     @ac;
+    padding:    					6px 10px 6px 10px;
+	font:							"Iosevka Nerd Font 10";
+}
+
+entry {
+    background-color:               @al;
+    text-color:                     @fg;
+    placeholder-color:              @fg;
+    placeholder:                    "";
+    expand:                         true;
+    horizontal-align:               0;
+    blink:                          false;
+    padding:                        6px;
+}
+
+inputbar {
+	children: 						[ textbox-prompt-colon, prompt ];
+    spacing:                        0;
+    background-color:               @al;
+    text-color:                     @fg;
+    border:                  		0px 0px 0px 0px;
+    border-radius:                  0px;
+    border-color:                  	@fg;
+    expand:                         false;
+    margin:                         0px 0px 0px 0px;
+    padding:                        0px;
+    position:                       center;
+}
+
+case-indicator {
+    background-color:               @bg;
+    text-color:                     @fg;
+    spacing:                        0;
+}
+
+
+listview {
+    background-color:               @al;
+    columns:                        1;
+    lines:							5;
+    spacing:                        10px;
+    cycle:                          true;
+    dynamic:                        true;
+    layout:                         horizontal;
+}
+
+mainbox {
+    background-color:               @al;
+    children:                       [ listview ];
+    spacing:                       	10px;
+    padding:                        10px;
+    border:                         1px;
+    border-radius:                  0px;
+	border-color:					@ac;
+}
+
+element {
+    background-color:               @al;
+    text-color:                     @fga;
+    orientation:                    horizontal;
+    border:                  		0px;
+    border-radius:                  0px;
+    border-color:                  	@fga;
+    padding:                        20px 25px 20px 25px;
+}
+
+element-icon {
+    background-color: 				inherit;
+    text-color:       				inherit;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    size:                           0px;
+    border:                         0px;
+}
+
+element-text {
+    background-color: 				inherit;
+    text-color:       				inherit;
+	font:							"feather 14";
+    expand:                         true;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    margin:                         0px 0px 0px 0px;
+}
+
+element selected {
+    background-color:               @bg;
+    text-color:                     @fg;
+    border:                  		1px;
+    border-radius:                  0px;
+    border-color:                  	@ac;
+}
+
+element.active,
+element.selected.urgent {
+  background-color: @on;
+  text-color: @background;
+  border-color: @on;
+}
+
+element.selected.urgent {
+  border-color: @selected;
+}
+
+element.urgent,
+element.selected.active {
+  background-color: @off;
+  text-color: @background;
+  border-color: @off;
+}
+
+element.selected.active {
+  border-color: @selected;
+}

@@ -1,0 +1,64 @@
+# Zathura configuration file
+# See man `man zathurarc'
+
+# Open document in fit-width mode by default
+set adjust-open "best-fit"
+
+# One page per row by default
+set pages-per-row 1
+
+#stop at page boundries
+set scroll-page-aware "true"
+set smooth-scroll "true"
+set scroll-full-overlap 0.01
+set scroll-step 100
+
+#zoom settings
+set zoom-min 5
+set guioptions ""
+
+# zathurarc-dark
+
+set font "Noto Sans 10"
+set default-bg "#1e2021" #00
+set default-fg "#999999" #01
+
+set statusbar-fg "#999999" #04
+set statusbar-bg "#1e2021" #01
+
+set inputbar-bg "#1e2021" #00 currently not used
+set inputbar-fg "#999999" #02
+
+set notification-error-bg "#ff92d0" #08
+set notification-error-fg "#1e021" #00
+
+set notification-warning-bg "#ff92d0" #08
+set notification-warning-fg "#1e2021" #00
+
+set highlight-color "#9aedfe" #0A
+set highlight-active-color "#caa9fa" #0D
+
+set completion-highlight-fg "#1e2021" #02
+set completion-highlight-bg "#9ddeaf" #0C
+
+set completion-bg "#1e2021" #02
+set completion-fg "#999999" #0C
+
+set notification-bg "#9ddeaf" #0B
+set notification-fg "#151515" #00
+
+set recolor "true"
+set recolor-lightcolor "#1e2021" #00
+set recolor-darkcolor "#999999" #06
+set recolor-reverse-video "true"
+set recolor-keephue "true"
+
+
+set render-loading "false"
+set scroll-step 50
+unmap f
+map f toggle_fullscreen
+map [fullscreen] f toggle_fullscreen
+map D set "first-page-column 1:1"
+map <c-D> set "first-page-column 1:2"
+     
