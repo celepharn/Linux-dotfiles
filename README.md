@@ -10,6 +10,5 @@ Mind you this is still a WIP, so feel free to make suggestions, I'm always looki
 ## Hyprland
 ![image](https://github.com/celepharn/Linux-dotfiles/raw/main/hyprland.png)
 
-
 ## i3
-![image]()
+![image](https://github.com/celepharn/Linux-dotfiles/raw/main/i3.png)
