@@ -757,6 +757,12 @@ def start_once():
     subprocess.call([home + '/.config/qtile/scripts/autostart.sh'])
 
 
+# By default Spotify doesn't respect window rules, this is a fix.
+@hook.subscribe.client_name_updated
+def spotify(window):
+    if window.name == 'Spotify':
+        window.cmd_togroup(group_name='5')
+
 def toscreen(qtile, group_name):
     if group_name  == qtile.current_screen.group.name:
         qtile.current_screen.set_group(qtile.current_screen.previous_group)
