@@ -356,11 +356,11 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.Sep(
-                    padding=6,
-                    linewidth=0,
-                    background=colors[5],
-                ),
+                #widget.Sep(
+                #    padding=6,
+                #    linewidth=0,
+                #    background=colors[5],
+                #),
                 widget.TextBox(
                     #text="  ",
                     text="  ",
@@ -655,10 +655,10 @@ screens = [
                 #),
                 widget.TextBox(
                     #text="  ",
-                    text="  ",
+                    text="   ",
                     font="Iosevka Nerd Font",
                     fontsize="13",
-                    padding=4,
+                    padding=-1,
                     background=colors[5],
                     foreground=colors[0],
                     mouse_callbacks={
