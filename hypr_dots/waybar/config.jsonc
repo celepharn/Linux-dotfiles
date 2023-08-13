@@ -3,7 +3,7 @@
 	"layer": "top",
 	"modules-left": ["custom/launcher","cpu","temperature","memory"],
 	"modules-center": ["wlr/workspaces"],
-	"modules-right": ["backlight","pulseaudio", "network", "battery", "clock", "custom/power"],
+	"modules-right": ["backlight","pulseaudio", "network", "bat1", "battery", "clock", "custom/power"],
     "height": 22,
 
 	"pulseaudio": {
@@ -18,36 +18,41 @@
 	},
         "river/tags": {
                     "num-tags": 6,
-                    "disable-click": true,
+                    "disable-click": true
         },
         "wlr/workspaces": {
           "format": "{icon}",
           "format-icons": {
           "1": "",
-          "2": "",
-          "3": "",
+          "2": "",
+          "3": "",
           "4": "",
-          "5": "",
-          "6": "",
+          "5": "",
+          "6": "",
           "7": "",
           "8": "",
           "9": "",
-          "10": "",
+          "10": "",
           "default": ""
           },
-          "on-click": "activate",
+          "on-click": "activate"
         },
 	"network": {
 		"tooltip": false,
-                "format": "{icon} {essid}",
+                "format-wifi": "{icon} {essid}",
                 "format-alt": "{icon}",
                 "format-alt-click": "click-right",
+                "format-disconnected": "{icon} offline",
+                "margin-top": 9,
+                "margin-bottom": 9,
+                "margin-right": 9,
+                "margin-left": 9,
                 "format-icons": {
                   "wifi": [""],
                   "ethernet": [""],
-                  "disconnected": ["睊"],
+                  "disconnected": ["睊"]
                 },
-                "on-click": "bash ~/.config/polybar/blocks/scripts/wifimenu.sh",
+                "on-click": "bash ~/.config/polybar/blocks/scripts/wifimenu.sh"
 	},
 	"backlight": {
 	/*	"tooltip": false,
@@ -63,7 +68,7 @@
         "on-click": "",
         "on-scroll-up": "light -A 5%",
         "on-scroll-down": "light -U 5%",
-        "smooth-scrolling-threshold": 1,
+        "smooth-scrolling-threshold": 1
 	},
     "battery": {
         "states": {
@@ -71,10 +76,24 @@
             "warning": 30,
             "critical": 20
         },
-        "format": "{icon}  {capacity}%",
+        "format": "{icon} {capacity}%",
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat1": {
+        "bat": "BAT1",
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "interval": 5,
         "format-icons": ["", "", "", "", ""]
     },
 	"tray":{
@@ -83,7 +102,7 @@
 	},
     "clock": {
         "format": "{: %H:%M }",
-        "format-alt": "{: %H:%M   %d/%m/%y}"
+        "format-alt": "{: %a, %d %b}"
     },
     "temperature": {
         "interval": 5,
@@ -125,7 +144,8 @@
     },
     "custom/power":{
         "tooltip": false,
-        "format": "襤",
+        "font": "Awesome",
+        "format": "",
         "on-click": "bash ~/.config/polybar/blocks/scripts/powermenu.sh",
         /* "on-click":"rofi-powermenu" */
         /*"on-click": "wlogout -p layer-shell"*/
