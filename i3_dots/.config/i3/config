@@ -414,7 +414,7 @@ exec_always --no-startup-id nvidia-settings --assign CurrentMetaMode="nvidia-aut
 exec_always --no-startup-id $HOME/.config/i3/scripts/autostart.sh
 
 #autostart
-exec_always --no-startup-id $HOME/.config/polybar/blocks/launch.sh
+exec_always --no-startup-id $HOME/.config/i3/scripts/launch.sh
 
 #get auth work with polkit-gnome
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -588,7 +588,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 ## rofi bindings fancy application menu (two bindings F9/$mod+d)
 
-bindsym $mod+Shift+d exec ~/.config/polybar/blocks/scripts/launcher.sh
+bindsym $mod+Shift+d exec ~/.config/i3/scripts/launcher.sh
 
 #bindsym $mod+d exec rofi -modi drun -show drun \
 #		-config ~/.config/rofi/rofidmenu.rasi
@@ -598,7 +598,7 @@ bindsym $mod+Shift+d exec ~/.config/polybar/blocks/scripts/launcher.sh
 
 ## rofi bindings for window menu (two bindings F10/$mod+t)
 
-bindsym $mod+Ctrl+q exec ~/.config/polybar/blocks/scripts/powermenu.sh
+bindsym $mod+Ctrl+q exec ~/.config/i3/scripts/powermenu.sh
 
 #bindsym $mod+t exec rofi -show window \
 #		-config ~/.config/rofi/rofidmenu.rasi
