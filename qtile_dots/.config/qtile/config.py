@@ -32,14 +32,14 @@ browser = "firefox"  # Setting browser to "Firefox Developer Edition"
 # Keybindings #
 keys = [
     Key([mod], "Return", lazy.spawn(term), desc="Launches default terminal"),
-    Key([mod, "shift"], "d", lazy.spawn(os.path.expanduser("~/.config/qtile/scripts/launcher.sh")),
+    Key([mod, "shift"], "d", lazy.spawn(os.path.expanduser("~/.config/scripts/launcher.sh")),
         desc="Rofi launcher",
     ),
     #Key([mod], "y", lazy.spawn("rofimoji -a copy"), desc="Launches rofimoji"),
     Key(
         [mod, "control"],
         "q",
-        lazy.spawn(os.path.expanduser("~/.config/qtile/scripts/powermenu.sh")),
+        lazy.spawn(os.path.expanduser("~/.config/scripts/powermenu.sh")),
         desc="Rofi powermenu",
     ),
     #Key(
@@ -370,7 +370,7 @@ screens = [
                     foreground=colors[0],
                     padding=0,
                     mouse_callbacks={
-                        "Button1": lambda: qtile.cmd_spawn(os.path.expanduser("~/.config/qtile/scripts/launcher.sh"))
+                        "Button1": lambda: qtile.cmd_spawn(os.path.expanduser("~/.config/scripts/launcher.sh"))
                     },
                 ),
                 widget.TextBox(
@@ -662,7 +662,7 @@ screens = [
                     background=colors[5],
                     foreground=colors[0],
                     mouse_callbacks={
-                        "Button1": lambda: qtile.cmd_spawn(os.path.expanduser("~/.config/qtile/scripts/powermenu.sh"))
+                        "Button1": lambda: qtile.cmd_spawn(os.path.expanduser("~/.config/scripts/powermenu.sh"))
                     },
                 ),
                 #widget.Sep(
