@@ -410,13 +410,13 @@ assign [class="Gimp-2.10"] $ws10
 #Screen tear fix Nvidia
 exec_always --no-startup-id nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
 
+# Autostart
+exec_always --no-startup-id $HOME/.config/sunset/scripts/autostart.sh
+
 # Polybar
-exec_always --no-startup-id $HOME/.config/scripts/autostart.sh
+exec_always --no-startup-id $HOME/.config/polybar/minimal/scripts/launch.sh
 
-#autostart
-exec_always --no-startup-id $HOME/.config/scripts/launch.sh
-
-#get auth work with polkit-gnome
+# get auth work with polkit-gnome
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # dex execute .desktop files
@@ -588,7 +588,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 ## rofi bindings fancy application menu (two bindings F9/$mod+d)
 
-bindsym $mod+Shift+d exec ~/.config/scripts/launcher.sh
+bindsym $mod+Shift+d exec ~/.config/sunset/scripts/launcher.sh
 
 #bindsym $mod+d exec rofi -modi drun -show drun \
 #		-config ~/.config/rofi/rofidmenu.rasi
@@ -598,7 +598,7 @@ bindsym $mod+Shift+d exec ~/.config/scripts/launcher.sh
 
 ## rofi bindings for window menu (two bindings F10/$mod+t)
 
-bindsym $mod+Ctrl+q exec ~/.config/scripts/powermenu.sh
+bindsym $mod+Ctrl+q exec ~/.config/sunset/scripts/powermenu.sh
 
 #bindsym $mod+t exec rofi -show window \
 #		-config ~/.config/rofi/rofidmenu.rasi
